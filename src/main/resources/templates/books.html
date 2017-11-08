@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>A list of Books</title>
+</head>
+
+<body>
+	<header>
+		<h1>Books</h1>
+	</header>
+	
+	<h3> <a href="/books">Our Books</a></h3>
+	<h3><a href="/authors">Authors</a></h3>
+	<h3><a href="/genres">Genres</a></h3>
+<div th:each="book: ${books}">
+        <p><span th:text="${'Genre:' + book.genre.genre + ' Title: ' + book.title + ' Authors: '}"></span>
+        <span th:each="author: ${book.author}" th:text="${author.firstName + ' ,' + author.lastName}"></span></p>
+    </div>
+
+</body>
+</html>
