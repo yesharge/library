@@ -25,11 +25,6 @@ public class LibraryController {
 		model.addAttribute("books", bookRepo.findAll());
 		return "books";
 	}
-	@RequestMapping("/book")
-	public String getOneBook(@RequestParam Long id, Model model) {
-		model.addAttribute("book", bookRepo.findOne(id));
-		return "book";
-	}
 	
 	@RequestMapping("/authors")
 	public String getAllAuthors (Model model) {
@@ -46,9 +41,5 @@ public class LibraryController {
 		model.addAttribute("genres", genreRepo.findAll());
 		return "genres";
 }
-	@RequestMapping("/genre")
-	public String getOneGenre(@RequestParam Long id, Model model) {
-		model.addAttribute("genre", genreRepo.findOne(id));
-		return "genre";
-}
+	
 }
